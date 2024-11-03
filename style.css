@@ -1,0 +1,99 @@
+:root {
+    --terminal-green: #00ff00;
+    --terminal-bg: #000000;
+    --scan-line-color: rgba(0, 255, 0, 0.1);
+}
+
+body {
+    background: var(--terminal-bg);
+    margin: 0;
+    font-family: 'Courier New', monospace;
+    color: var(--terminal-green);
+    overflow: hidden;
+}
+
+.crt {
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+}
+
+.crt::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        rgba(0, 255, 0, 0.1) 50%,
+        rgba(0, 0, 0, 0.1) 50%
+    );
+    background-size: 100% 4px;
+    pointer-events: none;
+    animation: scan-lines 10s linear infinite;
+}
+
+.terminal {
+    padding: 20px;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+.terminal-header {
+    margin-bottom: 20px;
+    opacity: 0.8;
+}
+
+.content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.ascii-art {
+    font-size: 12px;
+    line-height: 12px;
+    white-space: pre;
+    margin-bottom: 20px;
+}
+
+.typing-text {
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.cursor {
+    display: inline-block;
+    animation: blink 1s infinite;
+}
+
+.terminal-input {
+    display: flex;
+    gap: 8px;
+}
+
+.prompt {
+    color: var(--terminal-green);
+}
+
+@keyframes blink {
+    0%, 49% { opacity: 1; }
+    50%, 100% { opacity: 0; }
+}
+
+@keyframes scan-lines {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(4px); }
+}
+
+/* Neural network background effect */
+.neural-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.1;
+    pointer-events: none;
+    z-index: -1;
+}
