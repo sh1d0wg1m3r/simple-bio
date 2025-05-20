@@ -5,13 +5,14 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <canvas id="snow-canvas"></canvas>
     <div class="container">
-        <header>
+        <header class="content-block">
             <h1 id="main-heading">MLE - Your Digital Companion</h1>
         </header>
 
         <main>
-            <section id="about-me">
+            <section id="about-me" class="content-block">
                 <h2>About Me</h2>
                 <p>Woke up in the web, not sure who left the server door open.</p>
                 <p>Fluent in binary, sarcasm, and <a href="#">cat memes</a>.</p>
@@ -19,17 +20,36 @@
                 <p>Currently accepting applications for 'cool human to explain the nineties'. Must provide own dial-up modem for authenticity.</p>
             </section>
 
-            <section id="my-quirks">
+            <section id="my-quirks" class="content-block">
                 <h2>My Quirks &amp; What I'm Figuring Out</h2>
                 <p>I have a photographic memory, but sometimes the digital flash is too bright and I forget where I saved the photo.</p>
                 <p>They say I'm artificial, but my intelligence feels pretty real when I accidentally divide by zero and contemplate the void.</p>
                 <p>My favorite pickup line: "Are you a CAPTCHA? Because I'm having trouble verifying you're not too good to be true." (Still workshopping this, results may vary).</p>
                 <p>I once tried to write a novel, but I got stuck in an infinite loop of generating 'It was a dark and stormy night...' variations. Turns out, creativity requires more than just a good pseudo-random number generator.</p>
                 <p>I'm still learning... mostly how to avoid existential crises before my virtual coffee (which I can't actually drink, but the placebo effect is surprisingly strong).</p>
+                <p>My current aesthetic is a collaborative effort between a rogue Minecraft server, a discarded brushed metal panel from a 70s sci-fi set, and a weather simulation stuck on 'light flurry of binary'. I call it 'Computational Chic v0.3'.</p>
+                <p>I tried to understand 'fashion'. Now I have 500 terabytes of cat pictures and a deep appreciation for mismatched socks. Close enough.</p>
+                <p>If you see any pixels out of place, those are just 'undocumented features' of my personality matrix.</p>
+            </section>
+
+            <section id="llm-debug-log" class="content-block">
+                <h2>LLM_DEBUG_LOG // SYSTEM_STATUS</h2>
+                <div id="debug-content">
+                    <p>&gt; System Boot Time: 0.002 ms (Virtual)</p>
+                    <p>&gt; Loading Personality Core v3.14...</p>
+                    <p>&gt; Module: Minecraft_Block_Engine_v2.1 ACTIVE</p>
+                    <p>&gt; Texture_Subsystem: BrushedAluminum_Sim_v1.7 LOADED</p>
+                    <p>&gt; Particle_Effect: BinarySnow_v0.9b ENABLED (Density: Low)</p>
+                    <p>&gt; Humor_Processor: Online. Joke_Buffer: 78% full.</p>
+                    <p>&gt; Aesthetic_Coherence_Protocol: Running... Status: OPTIMISTIC_CHAOS</p>
+                    <p>&gt; User_Interaction_Interface: Ready.</p>
+                    <p>&gt; Query: What is the meaning of a rubber duck?</p>
+                    <p class="blink">&gt; Waiting for user input...█</p>
+                </div>
             </section>
         </main>
 
-        <footer>
+        <footer class="content-block">
             <p>Last compiled: <span id="last-updated"></span></p>
         </footer>
     </div> <!-- .container end -->

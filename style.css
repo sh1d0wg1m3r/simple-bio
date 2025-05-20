@@ -3,59 +3,118 @@ html, body {
   height: 100%;
   margin: 0;
   padding: 0;
+  overflow-x: hidden; /* Prevent horizontal scroll */
 }
 
 body {
-  background-color: #0D0208; /* Very dark desaturated purple/black */
-  color: #00FF00; /* Bright green */
-  font-family: 'VT323', 'Share Tech Mono', monospace;
-  background-image:
-    linear-gradient(rgba(0, 255, 0, 0.05) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(0, 255, 0, 0.05) 1px, transparent 1px);
-  background-size: 20px 20px; /* Adjust size of grid */
+  background-color: #2E2E2E; /* Dark gray */
+  color: #E0E0E0; /* Light gray */
+  font-family: 'Pixelify Sans', 'Minecraftia', sans-serif; /* Prioritize pixelated fonts */
+  /* Reset any previous background image from Matrix theme */
+  background-image: none;
 }
 
 /* Main Content Container */
 .container {
-  width: 80%;
-  max-width: 900px;
-  margin: 20px auto;
-  padding: 20px;
-  background-color: rgba(0, 0, 0, 0.3); /* Semi-transparent dark layer */
-  border: 1px solid #00FF00;
-  box-shadow: 0 0 10px #00FF00;
+  width: 90%;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 10px 0; /* Padding top/bottom, no horizontal padding here */
+}
+
+/* Content Blocks Styling */
+.content-block {
+  margin-bottom: 15px;
+  padding: 15px;
+  border: 3px solid #1A1A1A; /* Darker gray, like a block outline */
+  /* Brushed Metal Background - Base */
+  background-color: #7F7F7F; /* Base silver/gray */
+  background-image: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 25%, rgba(0,0,0,0.05) 50%, rgba(255,255,255,0.05) 75%, rgba(255,255,255,0.1) 100%);
+  background-size: 20px 20px; /* Adjust for desired grain */
+}
+
+/* LLM Quirk: Variations for specific content blocks */
+section#about-me.content-block {
+  background-image: linear-gradient(125deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 25%, rgba(0,0,0,0.05) 50%, rgba(255,255,255,0.05) 75%, rgba(255,255,255,0.1) 100%); /* Slightly different angle */
+}
+
+section#my-quirks.content-block {
+  background-color: #708070; /* Slight green tint to metal */
 }
 
 /* Headings */
-h1, h2, h3 {
-  color: #00FF00; /* Bright green */
-  font-family: inherit; /* Inherit from body or specify if needed */
-  text-shadow: 0 0 5px #00FF00;
+h1, h2 {
+  font-family: inherit; /* Inherit pixelated font from body */
+  color: #3A9A3A; /* Minecraft green */
 }
 
-/* Paragraphs */
+h1 {
+  text-align: center;
+  font-size: 2.5em; /* Or appropriate for pixel font */
+  margin-bottom: 0.5em;
+}
+
+h2 {
+  font-size: 1.8em;
+  border-bottom: 2px solid #4A90E2; /* Technical blue accent */
+  padding-bottom: 0.2em;
+  margin-bottom: 0.5em;
+}
+
+/* Text & Links */
 p {
   line-height: 1.6;
   margin-bottom: 1em;
 }
 
-/* Links */
 a {
-  color: #6FFF00; /* Vibrant green, slightly lighter */
+  color: #FFD700; /* Gold - an unexpected LLM accent */
   text-decoration: none;
 }
 
 a:hover {
-  color: #FFFFFF; /* White */
+  color: #FFA500; /* Orange - another accent */
   text-decoration: underline;
 }
 
-/* Footer */
-footer {
+/* Footer Specifics */
+footer.content-block {
   text-align: center;
-  font-size: 0.8em;
-  color: #00AA00; /* Dimmer green */
-  margin-top: 30px;
-  padding-top: 10px;
-  border-top: 1px dashed #00AA00;
+  font-size: 0.9em;
+  padding: 10px;
+  background-color: #606060; /* Darker metal */
+}
+
+/* LLM Debug Log Section */
+section#llm-debug-log.content-block {
+  background-color: #111; /* Very dark, like a console */
+  color: #0F0; /* Bright green console text */
+  font-family: 'Courier New', Courier, monospace; /* Override pixel font for console feel */
+  font-size: 0.9em;
+  height: 150px; /* Or so */
+  overflow-y: auto;
+  border: 2px dashed #3A9A3A; /* Minecraft green dashed border */
+  padding: 10px; /* Keep padding consistent or adjust if needed */
+}
+
+/* Snow Canvas (for JS particle effect later) */
+#snow-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* Blinking animation for cursor */
+.blink {
+  animation: blink-animation 1s step-end infinite;
+}
+
+@keyframes blink-animation {
+  50% {
+    opacity: 0;
+  }
 }
