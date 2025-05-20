@@ -1,36 +1,61 @@
-body {
+/* Global Styles */
+html, body {
+  height: 100%;
   margin: 0;
   padding: 0;
-  background-color: #002b00; /* Dark green */
-  color: #00ff00; /* Light green */
-  font-family: 'Courier New', Courier, monospace;
 }
 
-#terminal {
-  padding: 10px;
-  height: 100vh;
-  overflow-y: auto;
-  box-sizing: border-box; /* Include padding and border in the element's total width and height */
+body {
+  background-color: #0D0208; /* Very dark desaturated purple/black */
+  color: #00FF00; /* Bright green */
+  font-family: 'VT323', 'Share Tech Mono', monospace;
+  background-image:
+    linear-gradient(rgba(0, 255, 0, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 255, 0, 0.05) 1px, transparent 1px);
+  background-size: 20px 20px; /* Adjust size of grid */
 }
 
-.cursor {
-  display: inline-block;
-  background-color: #00ff00; /* Light green */
-  width: 10px; /* Approximate width of a character */
-  height: 1.2em; /* Approximate height of a line */
-  animation: blink 1s step-end infinite;
-  margin-left: 2px; /* Small space between text and cursor */
+/* Main Content Container */
+.container {
+  width: 80%;
+  max-width: 900px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.3); /* Semi-transparent dark layer */
+  border: 1px solid #00FF00;
+  box-shadow: 0 0 10px #00FF00;
 }
 
-@keyframes blink {
-  from, to {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0;
-  }
+/* Headings */
+h1, h2, h3 {
+  color: #00FF00; /* Bright green */
+  font-family: inherit; /* Inherit from body or specify if needed */
+  text-shadow: 0 0 5px #00FF00;
 }
 
-.prompt {
-  color: #00ff00; /* Light green, same as terminal text */
+/* Paragraphs */
+p {
+  line-height: 1.6;
+  margin-bottom: 1em;
+}
+
+/* Links */
+a {
+  color: #6FFF00; /* Vibrant green, slightly lighter */
+  text-decoration: none;
+}
+
+a:hover {
+  color: #FFFFFF; /* White */
+  text-decoration: underline;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  font-size: 0.8em;
+  color: #00AA00; /* Dimmer green */
+  margin-top: 30px;
+  padding-top: 10px;
+  border-top: 1px dashed #00AA00;
 }
